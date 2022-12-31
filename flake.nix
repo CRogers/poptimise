@@ -31,7 +31,7 @@
 
         # For `nix develop` (optional, can be skipped):
         devShell = pkgs.mkShell {
-          buildInputs = [ toolchain pkgs.nil ];
+          buildInputs = [ toolchain pkgs.rnix-lsp ];
         };
       }
     );
