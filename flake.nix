@@ -23,7 +23,7 @@
           rustc = toolchain;
         };
         
-      in rec {
+      in {
         # For `nix build` & `nix run`:
         defaultPackage = naersk'.buildPackage {
           src = ./.;
@@ -31,7 +31,7 @@
 
         # For `nix develop` (optional, can be skipped):
         devShell = pkgs.mkShell {
-          buildInputs = [ toolchain ];
+          buildInputs = [ toolchain pkgs.nil ];
         };
       }
     );
